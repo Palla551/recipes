@@ -1,0 +1,22 @@
+<%= render "shared/page_title", title: "Recipes" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Recipes</th>
+      <th scope="col">Description</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |r| %>
+    <tr>
+      <th scope="row"><%= r.id %></th>
+      <td><%= link_to r.name, recipe_path(r) %></td>
+      <td><%= r.description %></td>
+      <td><%= time_ago_in_words(r.created_at) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

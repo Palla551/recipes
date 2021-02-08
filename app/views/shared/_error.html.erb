@@ -1,0 +1,6 @@
+<% if obj.errors.any? %>
+  <%= "We are sorry, the next #{pluralize(obj.errors.count, "error")}, can't exist" %>
+  <% obj.errors.full_messages do |m| %>
+    <%= m %>
+  <% end %>
+<% end %>

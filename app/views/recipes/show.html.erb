@@ -1,0 +1,20 @@
+<%= render 'shared/page_title', title: @recipe.name %>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <%= link_to image_for(@recipe.user), recipes_path, class: "d-flex justify-content-end" %>
+      <h5 class="card-title"><%= @recipe.name %></h5>
+      <p class="card-text"><%= simple_format(@recipe.description) %></p>
+      <small><%= time_ago_in_words(@recipe.created_at)%></small>
+      <div class="d-flex justify-content-end" >
+        <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-success" %>
+         
+        <%= link_to "Delete", recipe_path(@recipe),
+          method: :delete,
+          data: {confirm: "Do you want delete this recipe?"},
+          class: "btn btn-danger" %>
+        </div>
+    </div>
+  </div>
+</div>

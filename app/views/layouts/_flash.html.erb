@@ -1,0 +1,11 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <a href="#" class="close" data-dissmiss="alert">&#215;</a>
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+</div>
+ 
